@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'b-root',
   template: `
   <Myworkspace-navigation></Myworkspace-navigation>
-  <div class="container">
+  <div class="container" style="margin-top:2rem;">
   <router-outlet></router-outlet>
   </div>
 `,
