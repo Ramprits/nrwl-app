@@ -16,6 +16,9 @@
     ],
     "baseUrl": ".",
     "paths": {
+      "@Myworkspace/core": [
+        "libs/core/src/index.ts"
+      ]
     }
   },
   "exclude": [
