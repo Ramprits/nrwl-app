@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { AppRoutes } from './app.routing';
+import { HomeRoutingModule } from './home/home-routing.module';
+import { CoreModule } from '../../../../libs/core/src/lib/core.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -13,7 +14,8 @@ import { AppRoutes } from './app.routing';
     BrowserModule,
     NxModule.forRoot(),
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
-    AppRoutes
+    HomeRoutingModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
