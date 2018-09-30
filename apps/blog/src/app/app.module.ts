@@ -9,16 +9,20 @@ import { HomeRoutingModule } from './home/home-routing.module';
 import { CoreModule } from '../../../../libs/core/src/lib/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
+    HttpClientModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     HomeRoutingModule,
     CoreModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production
+    })
   ],
   providers: [],
   bootstrap: [AppComponent],

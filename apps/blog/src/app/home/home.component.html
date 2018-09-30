@@ -1,12 +1,37 @@
-<div class="columns is-half-mobile
-is-one-third-tablet
-is-one-quarter-desktop">
-  <div class="column">
-    <div style="margin-top: 2rem;">
-      <p style="color:red;">
-        home works!
-      </p>
+<div class="columns is-multiline">
+  <div class="column is-one-third" *ngFor="let new of news?.articles">
+    <div>
+      <div class="card">
+        <div class="card-image" *ngIf="new?.urlToImage">
+          <figure class="image is-4by3">
+            <img src="{{new.urlToImage}}" alt="Image">
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="{{new.urlToImage}}" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <strong>Source Name:</strong> {{new.source.name}}
+              <p class="title is-4">
+                {{new.author}}
+              </p>
+              <p class="subtitle is-6">@johnsmith</p>
+            </div>
+          </div>
+
+          <div class="content">
+            <span [innerHTML]="new.description.substr(0,100) + '...'"></span>
+            <br>
+            <small>
+              {{new.publishedAt|date}}
+            </small>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>
