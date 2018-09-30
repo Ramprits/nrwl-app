@@ -4,15 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from './home/home.component';
 import { HomeRoutingModule } from './home/home-routing.module';
 import { CoreModule } from '../../../../libs/core/src/lib/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     NxModule.forRoot(),
@@ -20,12 +20,13 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
     HomeRoutingModule,
     CoreModule,
+    HomeModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production
     })
   ],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [HomeComponent]
+  exports: []
 })
 export class AppModule {}
