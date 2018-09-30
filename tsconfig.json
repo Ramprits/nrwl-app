@@ -18,6 +18,12 @@
     "paths": {
       "@Myworkspace/core": [
         "libs/core/src/index.ts"
+      ],
+      "@blog": [
+        "apps/blog/src"
+      ],
+      "@env": [
+        "apps/blog/src/environments/"
       ]
     }
   },
