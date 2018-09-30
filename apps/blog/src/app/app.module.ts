@@ -14,7 +14,7 @@ import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     NxModule.forRoot(),
     HttpClientModule,
     RouterModule.forRoot([], { initialNavigation: 'enabled' }),
