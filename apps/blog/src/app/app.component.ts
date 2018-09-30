@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
   <div class="container" style="margin-top:2rem;">
   <router-outlet></router-outlet>
   </div>
-`,
-
-  styles: []
+`
 })
-export class AppComponent {
-  title = 'blog';
-}
+export class AppComponent {}
